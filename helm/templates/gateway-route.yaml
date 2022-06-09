@@ -1,0 +1,13 @@
+﻿kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: gateway-route
+  namespace: ignition
+  labels:
+    ignition.service.service: gateway
+spec:
+  to:
+    kind: Service
+    name: gateway
+  port:
+    targetPort: '9088'
