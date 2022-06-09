@@ -54,9 +54,9 @@ spec:
           claimName: gw-data
       initContainers:
       - name: init-data
-        image: image-registry.openshift-image-registry.svc:5000/ignition/ignition-init:0.0.3
-        #command: [ "sleep", "1000" ]
+        image: image-registry.openshift-image-registry.svc:5000/ignition/ignition-init:0.0.5
         volumeMounts:
         - mountPath: /usr/local/bin/ignition/data
           name: gw-data
+      serviceAccountName: ignition-service-account
 status: {}
