@@ -1,0 +1,16 @@
+FROM registry.access.redhat.com/ubi8/ubi-minimal:8.6-751
+
+ARG IGNITION_SOURCE_FILE=ignition-8.1.17-data-init.tgz
+ENV IGNITION_DIR=/usr/local/bin/ignition
+ENV IGNITION_DATA_FILE=${IGNITION_DIR}/${IGNITION_SOURCE_FILE}
+ENV IGNITION_DATA_DIR=${IGNITION_DIR}/data
+
+RUN microdnf install tar gzip && \
+    microdnf clean all && \
+    mkdir ${IGNITION_DIR} && \
+    mkdir -p /usr/local/bin/ignition/data
+
+COPY ignition-8.1.17-data-init.tgz ${IGNITION_DATA_FILE}
+COPY entrypoint.sh /usr/local/bin/
+
+ENTRYPOINT [ "/usr/local/bin/entrypoint.sh" ]
