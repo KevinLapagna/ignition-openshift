@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: gateway-configmap
+data:
+  ACCEPT_IGNITION_EULA: "Y"
+  GATEWAY_ADMIN_PASSWORD_FILE: /run/gateway-secrets/password
+  GATEWAY_ADMIN_USERNAME: admin
+  IGNITION_EDITION: standard
+  TZ: America/Chicago

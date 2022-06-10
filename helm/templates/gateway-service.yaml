@@ -7,12 +7,9 @@ metadata:
   name: gateway
 spec:
   ports:
-  - name: "9088"
-    port: 9088
+  - name: "http"
+    port: 8088
     targetPort: 8088
-  - name: "9043"
-    port: 9043
-    targetPort: 8043
   selector:
     ignition.service: gateway
 status:

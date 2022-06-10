@@ -27,34 +27,31 @@ spec:
         - --
         - wrapper.java.initmemory=512
         - -Dignition.allowunsignedmodules=true
-        env:
-        - name: ACCEPT_IGNITION_EULA
-          value: "Y"
-        - name: GATEWAY_ADMIN_PASSWORD_FILE
-          value: /run/secrets/gateway-admin-password
-        - name: GATEWAY_ADMIN_USERNAME
-          value: admin
-        - name: IGNITION_EDITION
-          value: standard
-        - name: TZ
-          value: America/Chicago
+        envFrom:
+        - configMapRef:
+            name: gateway-configmap
         image: docker.io/inductiveautomation/ignition:8.1.17
         name: gateway
         ports:
         - containerPort: 8088
-        - containerPort: 8043
         resources: {}
         volumeMounts:
         - mountPath: /usr/local/bin/ignition/data
           name: gw-data
+        - mountPath: /run/gateway-secrets
+          name: gateway-admin-password
+          readOnly: true
       restartPolicy: Always
       volumes:
       - name: gw-data
         persistentVolumeClaim:
           claimName: gw-data
+      - name: gateway-admin-password
+        secret:
+          secretName: gateway-admin-password
       initContainers:
       - name: init-data
-        image: image-registry.openshift-image-registry.svc:5000/ignition/ignition-init:0.0.5
+        image: image-registry.openshift-image-registry.svc:5000/{{ .Release.Namespace }}/ignition-init:0.0.5
         volumeMounts:
         - mountPath: /usr/local/bin/ignition/data
           name: gw-data

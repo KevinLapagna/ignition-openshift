@@ -2,4 +2,3 @@
 apiVersion: image.openshift.io/v1
 metadata:
   name: ignition-init
-  namespace: ignition
