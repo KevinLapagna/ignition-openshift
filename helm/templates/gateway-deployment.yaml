@@ -41,6 +41,9 @@ spec:
         - mountPath: /run/gateway-secrets
           name: gateway-admin-password
           readOnly: true
+        - mountPath: /usr/local/bin/ignition/data/certificates/supplemental
+          name: gateway-certificates
+          readOnly: true
       restartPolicy: Always
       volumes:
       - name: gw-data
@@ -49,6 +52,9 @@ spec:
       - name: gateway-admin-password
         secret:
           secretName: gateway-admin-password
+      - name: gateway-certificates
+        configMap:
+          name: gateway-certificates
       initContainers:
       - name: init-data
         image: image-registry.openshift-image-registry.svc:5000/{{ .Release.Namespace }}/ignition-init:0.0.5

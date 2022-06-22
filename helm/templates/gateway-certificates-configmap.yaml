@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: gateway-certificates
+binaryData:
+  # Replace LDAP.cer with something useful. This is just a random data.
+  LDAP.cer: |
+    iMwNTRzlGRxyQJfDZijY45YCDqH3eCEelPaQqPzg0xnE1d2zo00xfOHosR4I+elR2QWHeLYcowoP
+    Qtl2eYb15MgXUe1aXWM129ZWukUhRqCadkZNtCOksEbTD2dgET5LCxncdVRz2pQDWl5f2IjMJTak
+    yP4C4MzEG5IwwSRWXQoP91zROsPjvew/98SuR2w0GIthtWrov7Rl8vJsGbDkPRmqN1xlgIhHJra5
+    fQC0Ea5fhFecn+Zc+mkNyuFQTpXuvugfIKAdraBGdwi7I0TZn23+RbTT57gKPYhR4tAkfGpikvYZ
+    LfHQubmNMLwuk6QpzCzZQYAJ3jIygaEQUZR/QjrOFf4FMNubwYawK65a0w5qQJNS40Eq3bVL5VI6
+    Ssx7/T6YEmiyBgR1eEZeSuZCvAW2Iezf2800sEv8EBV40D73hLqdBL0csXtlxsKvcg1IJT2peDCM
+    xUBtiVMogki+75OpgxFBI4KSc+AVfMrLJyo2dnswLA6MNBxcdMcPfGLLJjFdYZS3SAbICcPC3Krh
+    jZO71ftPc7rHhKSzPXN9kqE9BcZOOMJvwtYKQG+fjukrJSAJWSNE4KGhzUyK5paqWFEJitQz9oXG
+    j3Ze71hKl9a8qGzmxKvd+HKDW8xZlQl2Yx7VXQUEpmYHx4FyGF2d5cTyLCnaPbMohuHhBDeECVZa
+    A2B1F4pZ+sruu+McRfjgV6/5vi54bFJ5fYONqlPIn2rRCGVIN3CMy0iE0uXH+ywdd8AjLlTatXAf
+    ez7YdZu7wfIMVtV1cF9MrdLq5mn+7Uhnyc3jk9GC5z35r1pWFaANyLEz9vmHx9yk++F2qaRTOXLY
+    ZdQt9Q+RvH8Any2XUsSRcq8U3VNRlqJuC+L3mYpjyFrUUCFPuiiNpM2l8D2LFP65EmzcG6nzYTm3
+    sdzbMb8Apwf0S6FB+EKSEektsoEYsK5/P4QOyPf/kIYsBdXFUTAmsUhU40D11WQ74e4RgEsCiyCd
+    aQZNd6MOCn5t733acV/waQ/i71/O46j0csZRCh61LvZ7HMQWvqZde00ztn002tRTaGhYCR6rpOUr
+    75PUv3ZAC7rjKJj2havJy2D31ohHz+y61iAeXrtR0W77sudo3Ycz9yPl3OGMBeQUmd+oC7TDMij5
+    yFfNfxsLRnQmmJzw6f/e5Y/U7BL4lEowmYxYEYhSuyi4mNKSbKGHUTOXvFw2ZZnZ+MM0fHz5cAnX
+    fCQ28nYKEurnBpoqSADbD5q9SNeOrguT9NaRf61k8XgRvPS4lFFLCIt44dhaUSahUlX4/ZpSa2rA
+    zgxqgQ5CacWk1FI570oReeD7NlfVTPRRhQKWwz0959Caya2kxBeRcMRgf1NBru/Ec+vNyCO/tQ==
